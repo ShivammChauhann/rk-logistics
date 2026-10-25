@@ -1,6 +1,7 @@
 export const COMPANY = {
   name: 'RK Logistics Solution Private Limited',
   shortName: 'RK Logistics',
+  logoUrl: `${import.meta.env.BASE_URL}Image_49299C7B-6993-469A-A624-09C34908F6DE.jpeg`,
   phone: '+91 9654563516',
   phoneTel: '+919654563516',
   whatsapp: '919811262999',
