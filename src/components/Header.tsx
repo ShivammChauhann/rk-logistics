@@ -28,7 +28,7 @@ export default function Header() {
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group min-w-0" onClick={close}>
             <img
-              src="/Image_49299C7B-6993-469A-A624-09C34908F6DE.jpeg"
+              src={COMPANY.logoUrl}
               alt="RK Logistics Solution Private Limited logo"
               className="w-10 h-10 lg:w-12 lg:h-12 rounded-full object-cover shadow-lg shadow-black/20 group-hover:scale-105 transition-transform flex-shrink-0"
             />

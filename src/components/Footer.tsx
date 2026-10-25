@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <img
-                src="/Image_49299C7B-6993-469A-A624-09C34908F6DE.jpeg"
+                src={COMPANY.logoUrl}
                 alt="RK Logistics Solution Private Limited logo"
                 className="w-12 h-12 rounded-full object-cover"
               />
