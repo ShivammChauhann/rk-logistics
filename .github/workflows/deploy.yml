@@ -31,7 +31,10 @@ jobs:
         run: npm ci
 
       - name: Build website
-        run: npm run build -- --base="/${{ github.event.repository.name }}/"
+        run: npm run build -- --base="/"
+
+      - name: Preserve custom domain
+        run: cp CNAME dist/CNAME
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
