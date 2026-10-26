@@ -128,7 +128,17 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2.5 text-sm text-gray-400">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span className="leading-relaxed">{COMPANY.address}</span>
+                <span className="leading-relaxed">
+                  <strong className="text-gray-300 font-medium">Registered Office:</strong>{' '}
+                  {COMPANY.address}
+                </span>
+              </li>
+              <li className="flex items-start gap-2.5 text-sm text-gray-400">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <span className="leading-relaxed">
+                  <strong className="text-gray-300 font-medium">Ghaziabad HUB:</strong>{' '}
+                  {COMPANY.hubAddress}
+                </span>
               </li>
               <li>
                 <a

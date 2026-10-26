@@ -7,7 +7,8 @@ export const COMPANY = {
   whatsapp: '919811262999',
   whatsappDisplay: '+91 9811262999',
   email: 'info@rklogisticssolution.com',
-  address:
+  address: '517A, Karhera, Mohan Nagar, Ghaziabad (U.P)',
+  hubAddress:
     'Plot D-3, F-Block, Khasra No. 44, Pillar Number 634, Near Vardan Eye Hospital, Ghaziabad, Uttar Pradesh – 201001, India.',
   registeredOfficeCity: 'Ghaziabad',
   trackDocketUrl: 'https://arr.erp.logibrisk.com/bookingtracking',

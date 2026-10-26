@@ -60,41 +60,62 @@ export default function Contact() {
           />
         </div>
 
-        {/* Address card */}
-        <div className="mt-6 bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-            <span className="grid place-items-center w-12 h-12 rounded-lg bg-[#071533] text-amber-400 flex-shrink-0">
-              <MapPin className="w-6 h-6" strokeWidth={2.2} />
-            </span>
-            <div className="flex-1">
-              <h3 className="font-bold text-[#071533] text-lg">Registered Office</h3>
-              <p className="mt-1.5 text-gray-600 leading-relaxed text-sm sm:text-base">
-                {COMPANY.name}
-                <br />
-                {COMPANY.address}
-              </p>
-              <button
-                type="button"
-                onClick={copyAddress}
-                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#071533] hover:text-amber-600 transition-colors"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 text-green-600" />
-                    Address copied
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4" />
-                    Copy address
-                  </>
-                )}
-              </button>
-            </div>
-          </div>
+        {/* Address cards */}
+        <div className="mt-6 grid md:grid-cols-2 gap-6">
+          <AddressCard title="Registered Office" address={COMPANY.address} copyAddress={copyAddress} copied={copied} />
+          <AddressCard title="Ghaziabad HUB" address={COMPANY.hubAddress} />
         </div>
       </div>
     </section>
+  );
+}
+
+function AddressCard({
+  title,
+  address,
+  copyAddress,
+  copied,
+}: {
+  title: string;
+  address: string;
+  copyAddress?: () => void;
+  copied?: boolean;
+}) {
+  return (
+    <div className="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 sm:p-8">
+      <div className="flex items-start gap-4">
+        <span className="grid place-items-center w-12 h-12 rounded-lg bg-[#071533] text-amber-400 flex-shrink-0">
+          <MapPin className="w-6 h-6" strokeWidth={2.2} />
+        </span>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-bold text-[#071533] text-lg">{title}</h3>
+          <p className="mt-1.5 text-gray-600 leading-relaxed text-sm sm:text-base">
+            {title === 'Registered Office' ? 'RK Logistics Solution Pvt Ltd' : COMPANY.name}
+            <br />
+            {address}
+          </p>
+          {copyAddress && (
+            <button
+              type="button"
+              onClick={copyAddress}
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#071533] hover:text-amber-600 transition-colors"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-green-600" />
+                  Address copied
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4" />
+                  Copy address
+                </>
+              )}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 
